@@ -2,6 +2,15 @@ INTRODUCTION
 
 We are Team D3 Builders from the Robotronics Club of Ahmedabad. Being part of this club gives us the chance to really explore robotics, coding, and engineering in a hands-on way. With the support of our mentors, teachers, and a well-equipped lab, we get to turn our ideas into actual working robots. Each of us brings in different strengths—whether it’s designing, programming, or problem-solving—and together we make a strong team. Building this robot for the WRO competition has been an amazing experience where we’ve learned a lot, challenged ourselves, and grown as innovators.
 
+CONTENT
+
+t-photos contains 2 photos of the team (an official one and one funny photo with all team members)
+v-photos contains 6 photos of the vehicle (from every side, from top and bottom)
+video contains the video.md file with the link to a video where driving demonstration exists
+schemes contains one or several schematic diagrams in form of JPEG, PNG or PDF of the electromechanical components illustrating all the elements (electronic components and motors) used in the vehicle and how they connect to each other.
+src contains code of control software for all components which were programmed to participate in the competition
+models is for the files for models used by 3D printers, laser cutting machines and CNC machines to produce the vehicle elements. If there is nothing to add to this location, the directory can be removed.
+
 
 ABOUT THE TEAM
 
