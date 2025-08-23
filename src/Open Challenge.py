@@ -1,4 +1,4 @@
-# Team = Reyansh, Prisha and Prayag
+# Team = Deyaan, Darsh, Dhruv
 # First Full Open Challenge Code for WRO2025 FE Date: 01/08/2025
 # It used Gyro Straight in Starting Section, then stop before first corner and decide turning direction
 # -and accorading truning direction its start left or right wall following
