@@ -29,3 +29,37 @@ Darsh handles the GitHub repository and project journaling, keeping track of eve
 Dhruv is in charge of the hardware. He makes sure the chassis is strong, the motors are mounted properly, and the sensors are in the right positions. He keeps testing and adjusting the mechanical parts so the robot can turn sharply, move steadily, and complete the course without problems. His focus on details makes sure that the robot is not only smart on the inside but also tough and reliable on the outside.
 
 Together, as Team D3 Builders, the team brings skills in software, organization, and hardware together. They work as a team, solve problems collaboratively, and make sure the robot can handle anything the competition throws at it.
+
+
+
+## ELECTRONIC COMPONENTS
+
+Lego Technic Chassis – modular and adjustable base for the robot
+
+Raspberry Pi 4 Model B – main processor for sensors, camera, and navigation
+
+Pi Camera 3 – captures live images and video for obstacle detection and line tracking
+
+TB6612FNG Motor Driver – controls the DC motors, receives PWM signals from the Raspberry Pi
+
+DC Motors – provide the driving force for the robot
+
+Servo Motor – controls steering on the front axle
+
+VL53L1X Distance Sensors – mounted on sides and front for wall-following and obstacle detection
+
+3.7V 18650 Li-ion Batteries – power source for motors, sensors, and Raspberry Pi
+
+Jumper Wires – for power and communication between components
+
+Lego Beams and Mounting Accessories – used to secure all components on the chassis
+
+
+Our robot uses carefully chosen components to make it precise, reliable, and capable of completing the WRO course efficiently. The main chassis is a Lego Technic base, which is strong, modular, and easy to modify, allowing us to adjust the design as needed during testing. The movement of the robot is powered by two DC motors, controlled by a TB6612FNG motor driver. These motors provide smooth and precise motion, while the motor driver allows the Raspberry Pi to adjust speed and direction using PWM signals.
+
+For steering, we use a servo motor mounted on the front axle, giving the robot accurate and responsive turning ability. To detect walls and obstacles, we installed VL53L1X distance sensors, with two on the sides for wall-following and one at the front to measure distances to obstacles ahead. These sensors communicate with the Raspberry Pi through I2C, providing real-time distance data for navigation.
+
+The robot’s brain is a Raspberry Pi 4 Model B, which processes sensor data, runs the obstacle detection program, and handles image processing from the Pi Camera 3. The camera captures live images of the course, detects colored blocks, and tracks lines, allowing the robot to make intelligent navigation decisions. All of these components are powered by 3.7V 18650 Li-ion batteries, providing enough energy for multiple rounds of the competition. A voltage regulator ensures that the Raspberry Pi receives stable and safe power while the motors and sensors draw from the same battery source.
+
+Together, these components create a reliable, efficient, and autonomous robot capable of performing complex navigation and obstacle avoidance tasks in real time. Each part was selected and positioned carefully to work in harmony, ensuring smooth performance during the competition.
+
