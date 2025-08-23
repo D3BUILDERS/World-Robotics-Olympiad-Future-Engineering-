@@ -1,5 +1,5 @@
 # Team = Deyaan, Darsh, Dhruv
-# First Full Open Challenge Code for WRO2025 FE Date: 01/08/2025
+# First Full Open Challenge Code for WRO2025 FE 
 # It used Gyro Straight in Starting Section, then stop before first corner and decide turning direction
 # -and accorading truning direction its start left or right wall following
 # it increment turning counter on each corner and after 12(3 Laps) corner it stop robot in starting section.
