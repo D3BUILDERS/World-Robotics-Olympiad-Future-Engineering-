@@ -91,24 +91,52 @@ The robot’s brain is a Raspberry Pi 4 Model B, which processes sensor data, ru
 
 Together, these components create a reliable, efficient, and autonomous robot capable of performing complex navigation and obstacle avoidance tasks in real time. Each part was selected and positioned carefully to work in harmony, ensuring smooth performance during the competition.
 
-## Mobility Management
-## Core Design
+## MOBILITY MANAGEMENT
+### Core Design
 
 The entire mobility system of our robot was built around a car-like steering model instead of the usual skid steering used in many robots. We felt this approach gave our design a more realistic feel and also smoother turns on the WRO field. The main chassis was built with Lego Technic beams, which made it both lightweight and modular. Since we were new to WRO, the Lego-based frame gave us flexibility—whenever we faced problems, we could rebuild or adjust sections quickly. For propulsion, we used two DC motors at the rear, connected through the TB6612FNG motor driver. The rear wheels provided the driving force, while the front wheels were mounted on a servo-controlled axle for steering. This separation of driving and steering made the robot more predictable and stable, especially during alignment tasks and when taking curves.
 
-## Sensor Placement and Functionality
+### Sensor Placement and Functionality
 
 For the robot to navigate and react to its surroundings, we placed sensors carefully in positions where they could give the most useful data. The Pi Camera 3 was mounted in the front so it could detect lines and capture what lay ahead of the robot. This camera acted as the main “eye” of the system. Alongside it, the VL53L1X time-of-flight distance sensor was positioned to detect obstacles and walls in close range. To strengthen navigation, we also experimented with placing VL53L1X sensors on the sides so the robot could measure distances from boundaries and adjust its course accordingly. This combination allowed the robot to stay in its lane, avoid crashing, and follow the intended path on the field. Each sensor was chosen not only for accuracy but also for speed, since in competitions the robot has to make decisions within fractions of a second.
 
-## Steering Mechanism
+### Steering Mechanism
 
 The steering mechanism was one of the most important parts of the robot. Instead of using skid steering where two motors drive opposite sides, we relied on a front-mounted servo motor that physically turned the wheels left and right. This gave the robot car-like steering, which is both smoother and easier to control in narrow spaces. The servo was calibrated so that even small movements in angle created noticeable turns, but without making the robot unstable. This precision made it possible to take clean curves and align accurately with objects on the field. At the same time, the rear DC motors were synced with the steering commands so the robot would always maintain a balance between speed and turning. The biggest advantage of this setup was stability—unlike skid steering, our robot didn’t “drag” wheels while turning, which reduced friction and saved power.
 
-## Power Supply
+### Power Supply
 
 To power the whole robot, we decided to use 3.7V 18650 Li-ion batteries. These batteries were reliable, rechargeable, and light enough not to weigh the robot down. Since the Raspberry Pi 4 Model B, motors, and sensors all needed stable power, we had to plan the wiring carefully. The Pi was the most sensitive part, as it required consistent current and voltage. To make sure it didn’t drop power mid-run, we balanced the load so that the motors and servo didn’t interfere with it. The batteries were wired using jumper wires, which kept the connections neat and easy to manage. Even though we didn’t use a voltage regulator, the system performed well because of proper distribution and placement of batteries. One of the key things we learned here was how important battery stability is for a robot—without reliable power, even the best code or hardware won’t run properly.
 
-## Assembly Instructions
+### Assembly Instructions
 
 The assembly of the mobility system was done step by step to make sure everything aligned properly. First, the Lego beams were arranged to form a stable rectangular base. The Raspberry Pi was mounted in the center to act as the brain of the system and to keep the weight balanced. Next, the motor driver was fixed near the rear motors so the connections would be short and reduce energy loss. The servo was attached to the front axle to control steering directly, and the front wheels were secured tightly to respond to even small servo movements. The Pi Camera was positioned at the front with a clear view of the track, while the VL53L1X sensors were placed at the front and sides for maximum coverage. Finally, the Li-ion batteries were secured at the bottom of the chassis to keep the center of gravity low, which reduced wobbling when the robot moved at higher speeds. All components were connected using jumper wires, which gave us the flexibility to make changes quickly if needed.
 
+
+## POWER AND SENSE MANAGEMENT
+Power and sensors are like the brain and heart of our robot. Without stable power, the robot cannot even switch on, and without sensors, it cannot “see” or “feel” the world around it. In this part, I will explain how we managed the sensors, how the robot takes its readings, how it follows the path till the end, and how we wired everything together so that it works smoothly.
+
+
+### Sense Management
+
+Our robot uses three VL53L1X distance sensors and one Pi Camera 3. These sensors are very special because they work with laser light to measure how far an object is. They are small but very powerful and give accurate results in just milliseconds. Two of these sensors were placed on the sides of the robot. They keep track of the distance from the walls so that the robot can travel in a straight line without crashing. The third sensor was placed at the front and worked like a guard, warning the robot if something came in its way.
+
+The Pi Camera 3 was another very important part. While the sensors could only measure distances, the camera could actually recognize colors. This helped the robot understand instructions like “turn left at green” or “turn right at red.” By combining both distance sensors and the camera, the robot became much smarter because it could sense both objects and colors around it.
+
+### Initial Readings and Wall Following
+
+Before starting its journey, the robot first takes initial readings of the walls using the side sensors. These readings act like a reference point. As the robot moves forward, it keeps checking the distance again and again. If the left sensor suddenly shows a bigger gap, the robot knows the wall has ended and it might be time to turn left. If the right sensor shows the same, then it’s a right turn.
+
+The front sensor makes sure that the robot does not bump into a wall or an obstacle. If something is too close, it either slows the motors or stops them until it figures out a new path. This constant checking of distances is called wall following, and it is one of the main ways the robot manages to stay on track.
+
+### Final Stage and Path Completion
+
+When the robot goes deeper into the course, just depending on walls is not enough. This is where the Pi Camera comes in. Red and green blocks were placed on the course, and the camera had to recognize them. A red block meant turning right, and a green block meant turning left. This made the robot not only depend on walls but also follow “traffic signals” on the path.
+
+Towards the end of the run, both the camera and sensors work together. The sensors keep the robot safe from walls, and the camera makes sure it doesn’t miss the colored signals. This teamwork between sensors and camera helped the robot complete the path successfully.
+
+### Wiring and Sensor Integration
+
+To make all these parts work together, the wiring had to be done very carefully. The three VL53L1X sensors were connected to the Raspberry Pi 4 using the I²C pins, which are special pins that allow the Pi to talk to sensors quickly. The Pi Camera was connected through the CSI camera port on the Pi.
+
+We used jumper wires for all the connections because they are reliable and can be easily adjusted if something goes wrong. While wiring, we made sure that no two wires got mixed up and that all sensors were properly powered. Each sensor was tested separately before combining them. After all the wiring and integration, the sensors and camera worked together as one system, allowing the robot to sense its surroundings, make decisions, and move correctly.
