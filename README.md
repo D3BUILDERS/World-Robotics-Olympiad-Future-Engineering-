@@ -140,3 +140,9 @@ Towards the end of the run, both the camera and sensors work together. The senso
 To make all these parts work together, the wiring had to be done very carefully. The three VL53L1X sensors were connected to the Raspberry Pi 4 using the I²C pins, which are special pins that allow the Pi to talk to sensors quickly. The Pi Camera was connected through the CSI camera port on the Pi.
 
 We used jumper wires for all the connections because they are reliable and can be easily adjusted if something goes wrong. While wiring, we made sure that no two wires got mixed up and that all sensors were properly powered. Each sensor was tested separately before combining them. After all the wiring and integration, the sensors and camera worked together as one system, allowing the robot to sense its surroundings, make decisions, and move correctly.
+
+## Video Link
+
+https://youtu.be/Mi98GMMxlPI
+
+
