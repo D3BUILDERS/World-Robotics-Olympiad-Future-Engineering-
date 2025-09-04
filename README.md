@@ -143,6 +143,6 @@ We used jumper wires for all the connections because they are reliable and can b
 
 ## Video Link
 
-https://youtu.be/Mi98GMMxlPI
+https://youtu.be/UwmZha7NZZE?si=a05PenTzEn6TskxY
 
 
